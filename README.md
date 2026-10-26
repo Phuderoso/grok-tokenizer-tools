@@ -1,19 +1,13 @@
-# Tokenizer Tools
+# Tokenizer Tools + Skill
 
-## Modelos com tokenizer público
-- Grok-1 (SentencePiece)
-- Grok-2 (`alvarobartt/grok-2-tokenizer`)
-- Llama-3 (`meta-llama/Meta-Llama-3-8B`)
-- Mistral (`mistralai/Mistral-7B-v0.1`)
+## Skill for other Grok instances
+See `skills/tokenizer-inspector/SKILL.md`
 
-## Claude
-Anthropic **não publica** o tokenizer.
-- Script: `scripts/claude_example.py` (explica limitações + tenta aproximação Xenova)
-- Contagem oficial: API `count_tokens` da Anthropic
-- Aproximações comunitárias: ctok, Xenova/claude-tokenizer (legado)
+Direct, no-inventing-IDs workflow for inspecting public tokenizers.
 
-## Uso geral
-```bash
-pip install transformers sentencepiece
-python scripts/compare.py "tracking"
-```
+## Scripts
+`scripts/` contains working examples for Grok-1, Grok-2, Llama-3, Mistral, and Claude notes.
+
+## Real results (tested)
+- `tracking` → Grok-1: [9618], Grok-2: [63377]
+- `gato` → Grok-1: [382, 4707], Grok-2: [231, 2502]

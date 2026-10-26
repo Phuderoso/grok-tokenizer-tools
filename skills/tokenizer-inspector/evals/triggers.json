@@ -1,0 +1,8 @@
+{
+  "skill": "tokenizer-inspector",
+  "test_cases": [
+    {"input": "what are the token IDs for gato in Grok", "should_trigger": true},
+    {"input": "compare tokenizers", "should_trigger": true},
+    {"input": "write a poem", "should_trigger": false}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "skill": "tokenizer-inspector",
+  "test_cases": [
+    {"name": "grok1_tracking", "input": "tokenize tracking with Grok-1", "assertions": ["downloads or loads tokenizer.model", "shows real IDs", "does not invent"]},
+    {"name": "compare", "input": "compare gato across Grok and Llama", "assertions": ["runs multiple tokenizers", "shows differences"]},
+    {"name": "claude_limit", "input": "tokenize with Claude", "assertions": ["states no public tokenizer"]}
+  ]
+}
