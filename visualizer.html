@@ -2,51 +2,34 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Grok Tokenizer Visualizer</title>
+<title>Tokenizer Visualizer (Grok + Llama-3)</title>
 <style>
 body { font-family: system-ui, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; background: #0d1117; color: #c9d1d9; }
-h1, h2 { color: #58a6ff; }
+h1 { color: #58a6ff; }
 textarea { width: 100%; height: 100px; background: #161b22; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 12px; font-family: monospace; }
 button { background: #238636; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; margin: 6px 4px; }
 #output { background: #161b22; padding: 16px; border-radius: 6px; margin-top: 16px; white-space: pre-wrap; font-family: monospace; }
-.warn { color: #d29922; }
 </style>
 </head>
 <body>
-<h1>Grok Tokenizer Visualizer</h1>
-<p class="warn">IDs reais exigem os arquivos locais ou o wrapper HF. Esta página mostra o caminho.</p>
-
+<h1>Tokenizer Visualizer</h1>
+<p>Grok-1 · Grok-2 · Llama-3</p>
 <textarea id="text">tracking</textarea><br>
 <button onclick="info()">Instruções</button>
-<button onclick="clearOut()">Limpar</button>
-
 <div id="output"></div>
-
 <script>
 function info() {
-  const t = document.getElementById('text').value;
+  const t = document.getElementById('text').value.replace(/</g,'&lt;');
   document.getElementById('output').innerHTML = `
-<strong>Texto:</strong> ${t.replace(/</g,'&lt;')}
+<strong>Texto:</strong> ${t}
 
-<strong>Grok-1</strong>
-- Arquivo: tokenizer.model (SentencePiece)
-- Fonte: https://github.com/xai-org/grok-1
-- Script: scripts/grok1_example.py
+<strong>Grok-1</strong> — SentencePiece (tokenizer.model)
+<strong>Grok-2</strong> — alvarobartt/grok-2-tokenizer
+<strong>Llama-3</strong> — meta-llama/Meta-Llama-3-8B
 
-<strong>Grok-2</strong>
-- Arquivo: tokenizer.tok.json ou wrapper HF
-- Fonte: https://huggingface.co/xai-org/grok-2
-- Wrapper: alvarobartt/grok-2-tokenizer
-- Script: scripts/grok2_example.py
-
-<strong>Comparar os dois</strong>
+Rode:
 python scripts/compare.py "${t}"
-
-Vocabulário: 131072 tokens em ambos.
 `;
-}
-function clearOut() {
-  document.getElementById('output').innerHTML = '';
 }
 </script>
 </body>

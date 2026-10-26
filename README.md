@@ -1,26 +1,24 @@
-# Grok Tokenizer Tools
+# Tokenizer Tools (Grok + Llama-3)
 
-## Suporte
+## Modelos suportados
 - **Grok-1**: SentencePiece (`tokenizer.model`)
-- **Grok-2**: tiktoken-style / HF wrapper (`alvarobartt/grok-2-tokenizer`)
+- **Grok-2**: `alvarobartt/grok-2-tokenizer`
+- **Llama-3**: `meta-llama/Meta-Llama-3-8B`
 
-## Scripts
+## Uso
 ```bash
-# Grok-1 (precisa do tokenizer.model na pasta)
+pip install transformers sentencepiece
+
+# Individual
 python scripts/grok1_example.py
-
-# Grok-2 (precisa transformers)
-pip install transformers
 python scripts/grok2_example.py
+python scripts/llama3_example.py
 
-# Comparar
+# Comparar todos
 python scripts/compare.py "tracking"
 ```
 
-## Visualizador
-Abra `visualizer.html`.
-
-## Links
-- Grok-1: https://github.com/xai-org/grok-1
-- Grok-2: https://huggingface.co/xai-org/grok-2
-- Wrapper Grok-2: https://huggingface.co/alvarobartt/grok-2-tokenizer
+## Notas
+- Llama-3 pode exigir aceite da licença no Hugging Face.
+- Grok-1 precisa do arquivo `tokenizer.model` local.
+- Vocab Llama-3: 128256 tokens.
