@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Grok Tokenizer Tools</title>
+<style>
+body { font-family: system-ui, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #0d1117; color: #c9d1d9; }
+h1 { color: #58a6ff; }
+a { color: #58a6ff; }
+pre { background: #161b22; padding: 16px; border-radius: 6px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>Grok Tokenizer Tools</h1>
+<p>Ferramentas locais para inspecionar os tokenizers públicos do Grok (Grok-1 e Grok-2).</p>
+<p>O tokenizer não está exposto dentro da inferência. A forma correta é carregar o arquivo público localmente.</p>
+<h2>Arquivos públicos</h2>
+<ul>
+<li>Grok-1: <a href="https://github.com/xai-org/grok-1/blob/main/tokenizer.model">tokenizer.model</a> (SentencePiece, 131072 tokens)</li>
+<li>Grok-2: <a href="https://huggingface.co/xai-org/grok-2/blob/main/tokenizer.tok.json">tokenizer.tok.json</a> (tiktoken-style, 131072 tokens)</li>
+</ul>
+<h2>Como usar localmente</h2>
+<pre><code>pip install sentencepiece tiktoken
+# Depois rode os scripts na pasta scripts/</code></pre>
+<p>Veja os scripts em <code>scripts/</code> para exemplos de encode/decode.</p>
+</body>
+</html>
