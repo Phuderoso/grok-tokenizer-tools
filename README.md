@@ -1,16 +1,26 @@
 # Grok Tokenizer Tools
 
-Guias, scripts e visualizador para os tokenizers públicos do Grok.
-
-## Visualizador
-Abra `visualizer.html` no navegador (ou sirva localmente).
+## Suporte
+- **Grok-1**: SentencePiece (`tokenizer.model`)
+- **Grok-2**: tiktoken-style / HF wrapper (`alvarobartt/grok-2-tokenizer`)
 
 ## Scripts
-- `scripts/grok1_example.py` — encode/decode com SentencePiece (Grok-1)
-- `scripts/compare.py` — compara se o tokenizer.model estiver presente
+```bash
+# Grok-1 (precisa do tokenizer.model na pasta)
+python scripts/grok1_example.py
 
-## Arquivos públicos
-- Grok-1: https://github.com/xai-org/grok-1 (tokenizer.model)
-- Grok-2: https://huggingface.co/xai-org/grok-2 (tokenizer.tok.json)
+# Grok-2 (precisa transformers)
+pip install transformers
+python scripts/grok2_example.py
 
-Vocabulário: 131072 tokens em ambos.
+# Comparar
+python scripts/compare.py "tracking"
+```
+
+## Visualizador
+Abra `visualizer.html`.
+
+## Links
+- Grok-1: https://github.com/xai-org/grok-1
+- Grok-2: https://huggingface.co/xai-org/grok-2
+- Wrapper Grok-2: https://huggingface.co/alvarobartt/grok-2-tokenizer
