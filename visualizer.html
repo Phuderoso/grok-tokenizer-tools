@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Grok Tokenizer Visualizer</title>
+<style>
+body { font-family: system-ui, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; background: #0d1117; color: #c9d1d9; }
+h1, h2 { color: #58a6ff; }
+textarea { width: 100%; height: 120px; background: #161b22; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 12px; font-family: monospace; }
+button { background: #238636; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; margin: 8px 4px; }
+button:hover { background: #2ea043; }
+#output { background: #161b22; padding: 16px; border-radius: 6px; margin-top: 16px; white-space: pre-wrap; font-family: monospace; }
+.token { display: inline-block; background: #1f6feb; color: white; margin: 2px; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+.warn { color: #d29922; }
+</style>
+</head>
+<body>
+<h1>Grok Tokenizer Visualizer</h1>
+<p class="warn">Este visualizador roda no seu navegador, mas os vocabulários completos do Grok são grandes. Para resultados reais, baixe os arquivos e use os scripts Python locais.</p>
+
+<h2>Texto</h2>
+<textarea id="text" placeholder="Cole o texto aqui...">tracking</textarea>
+<br>
+<button onclick="showInfo()">Mostrar informação</button>
+<button onclick="clearOut()">Limpar</button>
+
+<div id="output"></div>
+
+<script>
+function showInfo() {
+  const text = document.getElementById('text').value;
+  const out = document.getElementById('output');
+  out.innerHTML = `
+<strong>Texto:</strong> ${text.replace(/</g,'&lt;')}
+
+<strong>Status:</strong> Visualização real requer o tokenizer carregado localmente.
+
+<strong>Próximos passos:</strong>
+1. Baixe o tokenizer:
+   - Grok-1: https://github.com/xai-org/grok-1/blob/main/tokenizer.model
+   - Grok-2: https://huggingface.co/xai-org/grok-2/blob/main/tokenizer.tok.json
+
+2. Use os scripts em /scripts/ com sentencepiece ou tiktoken.
+
+3. Exemplo esperado (formato, não IDs reais):
+   Texto → [id1, id2, ...]
+
+Vocabulário: 131072 tokens em ambos.
+`;
+}
+
+function clearOut() {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('text').value = '';
+}
+</script>
+</body>
+</html>

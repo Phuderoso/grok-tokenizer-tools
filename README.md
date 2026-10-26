@@ -1,13 +1,16 @@
 # Grok Tokenizer Tools
 
-Guias e scripts para trabalhar com os tokenizers públicos do Grok.
+Guias, scripts e visualizador para os tokenizers públicos do Grok.
 
-## Por que isso existe
-O tokenizer não fica exposto dentro da inferência do modelo. A forma de obter IDs reais é carregar o arquivo público localmente.
+## Visualizador
+Abra `visualizer.html` no navegador (ou sirva localmente).
 
-## Links
-- Grok-1 tokenizer.model: https://github.com/xai-org/grok-1
-- Grok-2 tokenizer.tok.json: https://huggingface.co/xai-org/grok-2
+## Scripts
+- `scripts/grok1_example.py` — encode/decode com SentencePiece (Grok-1)
+- `scripts/compare.py` — compara se o tokenizer.model estiver presente
 
-## Uso
-Veja `scripts/` para exemplos.
+## Arquivos públicos
+- Grok-1: https://github.com/xai-org/grok-1 (tokenizer.model)
+- Grok-2: https://huggingface.co/xai-org/grok-2 (tokenizer.tok.json)
+
+Vocabulário: 131072 tokens em ambos.
